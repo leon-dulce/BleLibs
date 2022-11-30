@@ -3,8 +3,45 @@
 > Build from 2022/11/30
 
 ##### Sample bluetooth connection tools
+[![](https://jitpack.io/v/leon-dulce/BleLibs.svg)](https://jitpack.io/#leon-dulce/BleLibs)
 
-### Using example
+## Import
+### gradle
+#### 1. Add it in your root build.gradle at the end of repositories:
+
+```java
+allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+#### 2. Add the dependency
+
+```java
+dependencies {
+	        implementation 'com.github.leon-dulce:BleLibs:Tag'
+	}
+```
+### maven
+```java
+<repositories>
+		<repository>
+		    <id>jitpack.io</id>
+		    <url>https://jitpack.io</url>
+		</repository>
+	</repositories>
+```
+```java
+<dependency>
+	    <groupId>com.github.leon-dulce</groupId>
+	    <artifactId>BleLibs</artifactId>
+	    <version>Tag</version>
+	</dependency>
+```
+
+## Using example
 
 #### 1. initialization
 ```java
@@ -19,38 +56,38 @@ BleManager.getInstance().requestPermission(this);
 #### 3. Scan & Connection  device
 ```java
 BleManager.getInstance().setBluetoothConnectListener(connectListener); // setConnectListener
-BleManager.getInstance().scanDevice(new BleManager.OnScanListener(){
-    @Override
-    public void onScan(BluetoothDevice bluetoothDevice) {
-		if(bluetoothDevice.getName().equals("your ble name")){
-			BleManager.getInstance().stopScan();
-			BleManager.getInstance().connectBluetooth(
-				new BluetoothModel.Builder()
-					.setDevice(bluetoothDevice)
-					.addServiceModel(new ServiceModel.Builder()
-						.setUUID(SERVER)
-						.addCharacteristic(new CharacteristicModel.Builder()
-							.setCharacteristicUUID(NOTIFY)
-							.addDescriptor(new DescriptorModel(DESCRIPTOR,
-								DescriptorModel.NOTIFICATION))
-							.build())
-                        .addCharacteristic(new CharacteristicModel.Builder()
-                            .setCharacteristicUUID(WRITE)
-                            .build())
-                        .addCharacteristic(new CharacteristicModel.Builder()
-                            .setCharacteristicUUID(READ)
-                            .build())
-                    .build())
-                .build()
-			);
-		}
-	}
+        BleManager.getInstance().scanDevice(new BleManager.OnScanListener(){
+@Override
+public void onScan(BluetoothDevice bluetoothDevice) {
+        if(bluetoothDevice.getName().equals("your ble name")){
+        BleManager.getInstance().stopScan();
+        BleManager.getInstance().connectBluetooth(
+        new BluetoothModel.Builder()
+        .setDevice(bluetoothDevice)
+        .addServiceModel(new ServiceModel.Builder()
+        .setUUID(SERVER)
+        .addCharacteristic(new CharacteristicModel.Builder()
+        .setCharacteristicUUID(NOTIFY)
+        .addDescriptor(new DescriptorModel(DESCRIPTOR,
+        DescriptorModel.NOTIFICATION))
+        .build())
+        .addCharacteristic(new CharacteristicModel.Builder()
+        .setCharacteristicUUID(WRITE)
+        .build())
+        .addCharacteristic(new CharacteristicModel.Builder()
+        .setCharacteristicUUID(READ)
+        .build())
+        .build())
+        .build()
+        );
+        }
+        }
 
-	@Override
-	public void onScanTimeout() {
- 
-	}
-});
+@Override
+public void onScanTimeout() {
+
+        }
+        });
 
 ```
 
@@ -58,7 +95,7 @@ BleManager.getInstance().scanDevice(new BleManager.OnScanListener(){
 ```java
 boolean write = BleManager.getInstance().writeMessage(blueDevice,WRITE_UUID,"3345678"); //write meassage to your characteristic
 
-boolean read = BleManager.getInstance().readMessage(blueDevice,READ_UUID);
+        boolean read = BleManager.getInstance().readMessage(blueDevice,READ_UUID);
 //read callback from BluetoothConnectListener
 
 ```

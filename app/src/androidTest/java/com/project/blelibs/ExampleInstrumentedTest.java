@@ -1,4 +1,4 @@
-package com.mediawave.blelibs;
+package com.project.blelibs;
 
 import android.content.Context;
 

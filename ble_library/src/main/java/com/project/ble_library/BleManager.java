@@ -1,4 +1,4 @@
-package com.mediawave.ble_library;
+package com.project.ble_library;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -20,11 +20,11 @@ import android.content.Context;
 import android.os.Handler;
 import android.util.Log;
 
-import com.mediawave.ble_library.model.BluetoothModel;
-import com.mediawave.ble_library.model.CharacteristicModel;
-import com.mediawave.ble_library.model.DescriptorModel;
-import com.mediawave.ble_library.model.QueueModel;
-import com.mediawave.ble_library.model.ServiceModel;
+import com.project.ble_library.model.CharacteristicModel;
+import com.project.ble_library.model.DescriptorModel;
+import com.project.ble_library.model.BluetoothModel;
+import com.project.ble_library.model.QueueModel;
+import com.project.ble_library.model.ServiceModel;
 
 import org.jetbrains.annotations.NotNull;
 

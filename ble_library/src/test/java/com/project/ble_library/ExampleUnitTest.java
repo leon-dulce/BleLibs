@@ -1,4 +1,4 @@
-package com.mediawave.ble_library;
+package com.project.ble_library;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.mediawave.ble_library.model;
+package com.project.ble_library.model;
 
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothGatt;
