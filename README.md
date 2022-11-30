@@ -21,7 +21,7 @@ allprojects {
 
 ```java
 dependencies {
-	        implementation 'com.github.leon-dulce:BleLibs:Tag'
+	        implementation 'com.github.leon-dulce:BleLibs:alpha-v1.0.2'
 	}
 ```
 ### maven
