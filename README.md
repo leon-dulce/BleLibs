@@ -27,17 +27,17 @@ dependencies {
 ### maven
 ```java
 <repositories>
-		<repository>
-		    <id>jitpack.io</id>
-		    <url>https://jitpack.io</url>
-		</repository>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
 </repositories>
 ```
 ```java
 <dependency>
-	    <groupId>com.github.leon-dulce</groupId>
-	    <artifactId>BleLibs</artifactId>
-	    <version>alpha-v1.0.4</version>
+    <groupId>com.github.leon-dulce</groupId>
+    <artifactId>BleLibs</artifactId>
+    <version>alpha-v1.0.4</version>
 </dependency>
 ```
 
