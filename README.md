@@ -11,18 +11,18 @@
 
 ```java
 allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
-	}
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
+}
 ```
 #### 2. Add the dependency
 
 ```java
 dependencies {
-	        implementation 'com.github.leon-dulce:BleLibs:alpha-v1.0.2'
-	}
+    implementation 'com.github.leon-dulce:BleLibs:alpha-v1.0.4'
+}
 ```
 ### maven
 ```java
@@ -31,14 +31,14 @@ dependencies {
 		    <id>jitpack.io</id>
 		    <url>https://jitpack.io</url>
 		</repository>
-	</repositories>
+</repositories>
 ```
 ```java
 <dependency>
 	    <groupId>com.github.leon-dulce</groupId>
 	    <artifactId>BleLibs</artifactId>
-	    <version>Tag</version>
-	</dependency>
+	    <version>alpha-v1.0.4</version>
+</dependency>
 ```
 
 ## Using example
